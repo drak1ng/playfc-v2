@@ -49,31 +49,31 @@
 					<div style="border:1px solid #f7ba00; border-radius:6px; background:#f7ba00; color:#000; padding:10px; margin-top:20px; text-shadow: none; text-transform:none; text-transform:uppercase; font-family:'roboto'; text-align:center;" id="bt_recuperar_salvar">Enviar senha por e-mail</div>
 				</div>
 			</div>
-		
-			
+
+
 			<script>
-				
+
 				$("#bt_recuperar_salvar").click(function(){
 					var email = $('#recuperar_email').val();
-					
+
 					if(email==""){ alert("O campo E-mail deve ser preenchido"); return false; }
-					
-					$.get("https://playfc.com.br/app_api/esqueci-minha-senha.php", { email:email }, function(data){
+
+					$.get("https://playfc.com.br/app_api_v2/esqueci-minha-senha.php", { email:email }, function(data){
 						if(data=="ERRO_EMAIL"){
 							alert("Não foi encontrado nenhum cadastro com esse E-mail!");
 						}else{
 							$.mobile.changePage("esqueci_minha_senha_obrigado.html", { transition: "fade", changeHash: false });
 						}
 					});
-					
+
 				});
-				
+
 				$("#bt_recuperar_voltar").click(function(){
 					$.mobile.changePage("login.html", { transition: "fade", changeHash: false });
 				});
-				
+
 			</script>
-		
+
 		</div>
     </body>
 </html>

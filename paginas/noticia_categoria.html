@@ -32,7 +32,7 @@
 		<script type="text/javascript" src="../js/cordova.js"></script>
 	</head>
     <body>
-	    
+
 	    <div data-role="page">
 
 		    <div class="topo">
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="botoes-rodape">
 				<div class="botoes-rodape1" id="noticias-categorias-rodape1"><i class="fa fa-home" aria-hidden="true"></i></div>
 				<div class="botoes-rodape6" id="noticias-categorias-rodape6"><i class="fa fa-newspaper-o" aria-hidden="true" style="color:#14A7F8;"></i></div>
@@ -59,52 +59,52 @@
 				<div class="botoes-rodape5" id="noticias-categorias-rodape5"><i class="fa fa-ticket" aria-hidden="true"></i></div>
 				<div class="botoes-rodape3" id="noticias-categorias-rodape3"><i class="fa fa-cogs" aria-hidden="true"></i></div>
 			</div>
-			
+
 			<script>
-				
+
 				var tipo_usuarios = window.localStorage.getItem('tipo_usuarios');
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
 				var categoria = window.localStorage.getItem('noticia_categoria_id');
-				
+
 				$("#bt-noticias-categorias-voltar").click(function(){
 					$.mobile.changePage("noticias_home.html", { transition: "fade", changeHash: false });
 				});
-				
-				$.get("https://playfc.com.br/app_api/noticia-categoria.php", { categoria:categoria }, function(data){
+
+				$.get("https://playfc.com.br/app_api_v2/noticia-categoria.php", { categoria:categoria }, function(data){
 					$("#noticias-categorias-conteudo").html(data);
 				});
-				
+
 				window.localStorage.setItem('noticia_pagina_anterior','noticia_categoria.html');
-				
+
 				$('#noticias-categorias-rodape1').click(function(){
 					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#noticias-categorias-rodape2').click(function(){
 					$.mobile.changePage("campeonatos.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#noticias-categorias-rodape3').click(function(){
 					$.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#noticias-categorias-rodape4').click(function(){
 					$.mobile.changePage("gol_home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#noticias-categorias-rodape5').click(function(){
 					$.mobile.changePage("cinema_home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#noticias-categorias-rodape6').click(function(){
 					$.mobile.changePage("noticias_home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 			</script>
-			
-			
-		
+
+
+
 		</div>
     </body>
 </html>

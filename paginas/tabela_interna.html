@@ -32,7 +32,7 @@
 		<script type="text/javascript" src="../js/cordova.js"></script>
 	</head>
     <body>
-	    
+
 	    <div data-role="page">
 
 		    <div class="topo">
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="botoes-rodape">
 				<div class="botoes-rodape1" id="tabela-interna-rodape1"><i class="fa fa-home" aria-hidden="true"></i></div>
 				<div class="botoes-rodape6" id="tabela-interna-rodape6"><i class="fa fa-newspaper-o" aria-hidden="true"></i></div>
@@ -59,19 +59,19 @@
 				<div class="botoes-rodape5" id="tabela-interna-rodape5"><i class="fa fa-ticket" aria-hidden="true"></i></div>
 				<div class="botoes-rodape3" id="tabela-interna-rodape3"><i class="fa fa-cogs" aria-hidden="true"></i></div>
 			</div>
-			
+
 			<style>
 				#tabela_interna_conteudo				{ margin:9px -16px 60px -16px; padding:0px; }
-				
+
 				.grupos-interna-titulo					{ text-align:center; background:#ddd; padding:10px 0px; font-weight:bold; font-size:18px; margin: 0px 0px 0px 0px; line-height:18px; }
 				.grupos-interna-titulo span				{ font-weight:normal; font-size:16px; }
-				
+
 				.lista-grupos-interna					{ padding:20px 0px; background:#FFF; }
 				.lista-grupos-interna-titulo			{ text-align:center; color:#333; font-weight:bold; margin-bottom:10px; }
 				.lista-grupos-interna-equipes			{ border-top:1px solid #CCC; padding:5px; font-size:11px; }
 				.lista-grupos-interna-equipes-nome		{ width:calc(100% - 180px); float:left; text-transform:uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 				.lista-grupos-interna-equipes-pontos	{ width:30px; float:left; font-weight:bold; text-align:center; }
-				
+
 				.jogos							{ margin:10px 5px; padding:10px; border-radius:6px; background:#FFF; }
 				.jogos-titulo					{ text-align:center; color:#333; font-weight:bold; margin-bottom:10px; }
 				.jogos-lista					{ padding:5px 0px; }
@@ -83,53 +83,53 @@
 				.jogos-lista-dados				{ font-weight:normal; font-size:12px; background:#444; border-radius:0px 0px 5px 5px; color:#FFF; text-align:center; padding:5px; }
 				.jogos-lista-dados span			{ font-weight:normal; }
 			</style>
-			
+
 			<script>
-				
+
 				var tipo_usuarios = window.localStorage.getItem('tipo_usuarios');
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
-				
+
 				var categoria = window.localStorage.getItem('categoria_id');
 				var categoria_nome = window.localStorage.getItem('categoria_nome');
 				var categoria_campeonato = window.localStorage.getItem('categoria_campeonato');
 				var campeonato_nome = window.localStorage.getItem('campeonato_nome');
-				
-				
+
+
 				var grupo = window.localStorage.getItem('grupo_id');
 				var grupo_nome = window.localStorage.getItem('grupo_nome');
-				
+
 				$('#tabela-titulo').html(categoria_nome);
 
 				$("#bt_tabela_interna_voltar").click(function(){
 					$.mobile.changePage("tabela.html", { transition: "fade", changeHash: false });
 				});
 
-				/*				
+				/*
 				$('.topo2-menu').click(function(){ $('.menu-container').show(); });
 				$('#bt-home-sair').click(function(){
 					window.localStorage.setItem('id_usuarios','');
 					$.mobile.changePage("login.html", { transition: "fade", changeHash: false });
 				});
-				$.get("http://playfc.com.br/app_api/home.php", { tipo_usuarios:tipo_usuarios, id_usuarios:id_usuarios, registrationId:registrationId }, function(data){ $('#home_conteudo').html(data); });
+				$.get("http://playfc.com.br/app_api_v2/home.php", { tipo_usuarios:tipo_usuarios, id_usuarios:id_usuarios, registrationId:registrationId }, function(data){ $('#home_conteudo').html(data); });
 				*/
-				
+
 				$.post("https://playfc.com.br/campeonatos/Informacoes_Campeonato/getGruposCategoria", { id:categoria }, function(data){
 					var info = JSON.parse(data);
 					var items = [];
 					var cabecalho = "";
-					
+
 					cabecalho+= "<div class='grupos-interna-titulo'>"+campeonato_nome+"<br><span>"+categoria_nome+"</div>";
-					
+
 					$.each(info,function(data){
 
 						if(grupo==info[data].idGrupo){
 							items.push( "<div class='lista-grupos-interna'><div class='lista-grupos-interna-titulo'>"+info[data].nome+"</div><div id='lista_equipes_interna_"+info[data].idGrupo+"'></div></div>");
 						}
 					});
-					
+
 					$('#tabela_interna_conteudo').html(cabecalho+items.join("")+"<div class='jogos'></div>");
-					
+
 					$.post("https://playfc.com.br/campeonatos/Informacoes_Campeonato/getTabelaGrupo", { id:grupo }, function(data2){
 						var info2 = JSON.parse(data2);
 						var items2 = [];
@@ -137,60 +137,60 @@
 						$.each(info2,function(data2){
 							items2.push("<div class='lista-grupos-interna-equipes'><div class='lista-grupos-interna-equipes-nome'>"+info2[data2].equipe+"</div><div class='lista-grupos-interna-equipes-pontos'>"+info2[data2].pontos+"</div><div class='lista-grupos-interna-equipes-pontos'>"+info2[data2].jogos+"</div><div class='lista-grupos-interna-equipes-pontos'>"+info2[data2].vitoria+"</div><div class='lista-grupos-interna-equipes-pontos'>"+info2[data2].empate+"</div><div class='lista-grupos-interna-equipes-pontos'>"+info2[data2].derrota+"</div><div class='lista-grupos-interna-equipes-pontos'>"+info2[data2].golsP+"</div><div style='clear:both;'></div></div>");
 						});
-	
-						$("#lista_equipes_interna_"+grupo).html(items2.join(""));
-						
-					});
-					
 
-					
+						$("#lista_equipes_interna_"+grupo).html(items2.join(""));
+
+					});
+
+
+
 					$.post("https://playfc.com.br/campeonatos/Informacoes_Campeonato/getJogosCategoria", { id:categoria, data:'', atuais:'true', id_grupo:grupo }, function(data){
 						var info3 = JSON.parse(data);
 						var items3 = [];
 						var imagem1 = "";
 						var imagem2 = "";
-							
+
 						$.each(info3,function(data3){
 							imagem1 = info3[data3].brasaoEquipe1; if(imagem1=='' || imagem1==undefined || imagem1=='undefined'){ imagem1='../img/sem_logo.png'; }
 							imagem2 = info3[data3].BrasaoEquipe2; if(imagem2=='' || imagem2==undefined || imagem2=='undefined'){ imagem2='../img/sem_logo.png'; }
 							items3.push( "<div class='jogos-lista'><div class='jogos-lista-logos'><div class='jogos-lista-logo1' style='background-image:url("+imagem1+");'>"+info3[data3].golsEquipe1+"</div><div class='jogos-lista-logox'>X</div><div class='jogos-lista-logo2' style='background-image:url("+imagem2+");'>"+info3[data3].golsEquipe2+"</div><div style='clear:both;'></div></div><div class='jogos-lista-times'>"+info3[data3].nomeEquipe1+"<br><b>X</b><br>"+info3[data3].nomeEquipe2+"</div><div class='jogos-lista-dados'>Campo: "+info3[data3].campo+" | <span>Data: "+info3[data3].data_br+"</span> | <span>Horário: "+info3[data3].hora+"</span></div></div>");
 						});
-						
+
 						$('.jogos').html("<div class='jogos-titulo'>JOGOS DA RODADA</div>"+items3.join(""));
 					});
-					
 
-					
+
+
 				});
-				
-				
-				
+
+
+
 				$('#tabela-interna-rodape1').click(function(){
 					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#tabela-interna-rodape2').click(function(){
 					$.mobile.changePage("campeonatos.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#tabela-interna-rodape3').click(function(){
 					$.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#tabela-interna-rodape4').click(function(){
 					$.mobile.changePage("gol_home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#tabela-interna-rodape5').click(function(){
 					$.mobile.changePage("cinema_home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#tabela-interna-rodape6').click(function(){
 					$.mobile.changePage("noticias_home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 			</script>
-		
+
 		</div>
     </body>
 </html>

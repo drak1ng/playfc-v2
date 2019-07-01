@@ -32,7 +32,7 @@
 		<script type="text/javascript" src="../js/cordova.js"></script>
 	</head>
     <body>
-	    
+
 	    <div data-role="page">
 
 		    <div class="topo">
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="botoes-rodape">
 				<div class="botoes-rodape1" id="campeonatos-rodape1"><i class="fa fa-home" aria-hidden="true"></i></div>
 				<div class="botoes-rodape6" id="campeonatos-rodape6"><i class="fa fa-newspaper-o" aria-hidden="true"></i></div>
@@ -59,9 +59,9 @@
 				<div class="botoes-rodape5" id="campeonatos-rodape5"><i class="fa fa-ticket" aria-hidden="true"></i></div>
 				<div class="botoes-rodape3" id="campeonatos-rodape3"><i class="fa fa-cogs" aria-hidden="true"></i></div>
 			</div>
-			
+
 			<script>
-				
+
 				var tipo_usuarios = window.localStorage.getItem('tipo_usuarios');
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
@@ -69,41 +69,41 @@
 				$("#bt-campeonatos-voltar").click(function(){
 					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 				});
-				
-				$.get("https://playfc.com.br/app_api/campeonatos.php", function(data){
+
+				$.get("https://playfc.com.br/app_api_v2/campeonatos.php", function(data){
 					$("#campeonatos-conteudo").html(data);
 				});
-				
-				
-				
+
+
+
 				$('#campeonatos-rodape1').click(function(){
 					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#campeonatos-rodape2').click(function(){
 
 				});
-				
+
 				$('#campeonatos-rodape3').click(function(){
 					$.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#campeonatos-rodape4').click(function(){
 					$.mobile.changePage("gol_home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#campeonatos-rodape5').click(function(){
 					$.mobile.changePage("cinema_home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#campeonatos-rodape6').click(function(){
 					$.mobile.changePage("noticias_home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 			</script>
-			
-			
-		
+
+
+
 		</div>
     </body>
 </html>

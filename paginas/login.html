@@ -44,25 +44,25 @@
 			  <div style="border:1px solid #000; border-radius:6px; background:#000; color:#FFF; padding:8px 10px; margin-top:30px; text-shadow: none; text-transform:none; text-transform:uppercase; font-family:'roboto';" id="bt_login_cadastrar">Quero me Cadastrar</div>
 			  <div style="border:0px solid #CCC; border-radius:6px; background:transparent; color:#999; padding:8px 10px; margin-top:10px; text-shadow: none; text-transform:none; text-transform:uppercase; font-family:'roboto';" id="bt_login_esqueci_senha">Esqueci minha senha</div>
 			</div>
-			
+
 			<script>
-				
+
 				$(document).ready(function(){
 					var id_usuarios = window.localStorage.getItem('id_usuarios');
 					if(id_usuarios!="" && id_usuarios!=null){
 						$.mobile.changePage("home.html", { transition: "none", changeHash: false });
 					}
 				});
-				
+
 				$("#bt_login_acessar").click(function(){
-					
+
 					var email = $('#login_email').val();
 					var senha = $('#login_senha').val();
-					
+
 					if(email==""){ alert("O campo E-mail deve ser preenchido"); return false; }
 					if(senha==""){ alert("O campo Senha deve ser preenchido"); return false; }
-					
-					$.get("https://playfc.com.br/app_api/login.php", { email:email, senha:senha }, function(data){
+
+					$.get("https://playfc.com.br/app_api_v2/login.php", { email:email, senha:senha }, function(data){
 						if(data=="ERRO"){
 							alert("O E-mail ou a Senha utilizados não são válidos");
 						}else{
@@ -73,19 +73,19 @@
 							$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 						}
 					});
-					
+
 				});
-				
+
 				$("#bt_login_cadastrar").click(function(){
 					$.mobile.changePage("cadastro.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$("#bt_login_esqueci_senha").click(function(){
 					$.mobile.changePage("esqueci_minha_senha.html", { transition: "fade", changeHash: false });
 				});
-				
+
 			</script>
-		
+
 		</div>
     </body>
 </html>

@@ -32,7 +32,7 @@
 		<script type="text/javascript" src="../js/cordova.js"></script>
 	</head>
     <body>
-	    
+
 	    <div data-role="page">
 
 		    <div class="topo">
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="botoes-rodape">
 				<div class="botoes-rodape1" id="tabela-rodape1"><i class="fa fa-home" aria-hidden="true"></i></div>
 				<div class="botoes-rodape6" id="tabela-rodape6"><i class="fa fa-newspaper-o" aria-hidden="true"></i></div>
@@ -59,15 +59,15 @@
 				<div class="botoes-rodape5" id="tabela-rodape5"><i class="fa fa-ticket" aria-hidden="true"></i></div>
 				<div class="botoes-rodape3" id="tabela-rodape3"><i class="fa fa-cogs" aria-hidden="true"></i></div>
 			</div>
-			
+
 			<style>
 				#tabela_conteudo				{ margin:9px -16px 60px -16px; padding:10px; }
-				
+
 				.grupos-nenhum					{ margin:10px 5px; padding:10px; border-radius:6px; background:#FFF; text-align:center; padding:20px 0px; }
-				
+
 				.lista-titulo					{ text-align:center; background:#ddd; padding:10px 0px; font-weight:bold; font-size:18px; margin: -10px -10px 0px -10px; line-height:18px; }
 				.lista-titulo span				{ font-weight:normal; font-size:16px; }
-				
+
 				.lista-grupos					{ margin:10px 5px; padding:10px; border-radius:6px; background:#FFF; }
 				.lista-grupos-titulo			{ text-align:center; color:#333; font-weight:bold; margin-bottom:10px; }
 				.lista-grupos-equipes			{ border-top:1px solid #CCC; padding:5px; font-size:11px; }
@@ -75,7 +75,7 @@
 				.lista-grupos-equipes-pontos	{ width:30px; float:left; font-weight:bold; text-align:center; }
 				.lista-grupos-botao				{ background:#666; color:#FFF; padding:10px 10px 7px 10px; text-align:right; border-radius:0px 0px 6px 6px; margin:10px -11px -11px -11px; font-size:13px; }
 				.lista-grupos-botao i			{ font-size:30px; float:right; margin:-5px 5px 0px 20px; }
-				
+
 				.artilheiros					{ margin:10px 5px; padding:10px; border-radius:6px; background:#FFF; }
 				.artilheiros-titulo				{ text-align:center; color:#333; font-weight:bold; margin-bottom:10px; line-height:18px; padding-top:5px; }
 				.artilheiros-titulo span		{ font-weight:normal; font-size:12px; }
@@ -87,9 +87,9 @@
 				.artilheiros-lista-texto		{ width:calc(100% - 100px); float:left; font-weight:bold; color:#666; text-transform:uppercase; font-size:12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height:14px; padding-top:5px; }
 				.artilheiros-lista-texto span	{ font-size:11px; font-weight:normal; color:#888; }
 				.artilheiros-lista-gols			{ width:50px; float:left; text-align:center; font-size:20px; font-weight:bold; padding-top:7px; }
-				
+
 				.eliminatorias					{ display:none; }
-				
+
 				.jogos							{ margin:10px 5px; padding:10px; border-radius:6px; background:#FFF; }
 				.jogos-titulo					{ text-align:center; color:#333; font-weight:bold; margin-bottom:10px; }
 				.jogos-lista					{ padding:5px 0px; }
@@ -100,20 +100,20 @@
 				.jogos-lista-times				{ background:#ebebeb; text-align:center; padding:10px 0px; text-transform:uppercase; font-size:12px; line-height:15px; border:1px solid #CCC; }
 				.jogos-lista-dados				{ font-weight:normal; font-size:12px; background:#444; border-radius:0px 0px 5px 5px; color:#FFF; text-align:center; padding:5px; }
 				.jogos-lista-dados span			{ font-weight:normal; }
-				
+
 			</style>
-			
+
 			<script>
-				
+
 				var tipo_usuarios = window.localStorage.getItem('tipo_usuarios');
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
-				
+
 				var categoria = window.localStorage.getItem('categoria_id');
 				var categoria_nome = window.localStorage.getItem('categoria_nome');
 				var categoria_campeonato = window.localStorage.getItem('categoria_campeonato');
 				var campeonato_nome = window.localStorage.getItem('campeonato_nome');
-				
+
 				//categoria = 20;
 				//categoria_nome = "SUB 17 MASCULINO";
 				//categoria_campeonato = 15;
@@ -122,42 +122,42 @@
 					$.mobile.changePage("grupos.html", { transition: "fade", changeHash: false });
 				});
 
-				/*				
+				/*
 				$('.topo2-menu').click(function(){ $('.menu-container').show(); });
 				$('#bt-home-sair').click(function(){
 					window.localStorage.setItem('id_usuarios','');
 					$.mobile.changePage("login.html", { transition: "fade", changeHash: false });
 				});
-				$.get("http://playfc.com.br/app_api/home.php", { tipo_usuarios:tipo_usuarios, id_usuarios:id_usuarios, registrationId:registrationId }, function(data){ $('#home_conteudo').html(data); });
+				$.get("http://playfc.com.br/app_api_v2/home.php", { tipo_usuarios:tipo_usuarios, id_usuarios:id_usuarios, registrationId:registrationId }, function(data){ $('#home_conteudo').html(data); });
 				*/
-				
+
 				$.post("https://playfc.com.br/campeonatos/Informacoes_Campeonato/getGruposCategoria", { id:categoria }, function(data){
 					var info = JSON.parse(data);
 					var items = [];
 					var quantidade = 0;
-						
+
 					$.each(info,function(data){
-						
+
 						items.push( "<div class='lista-grupos' rel='"+info[data].idGrupo+"'><div class='lista-grupos-titulo'>"+info[data].nome+"</div><div id='lista_equipes_"+info[data].idGrupo+"'></div><div class='lista-grupos-botao'>Clique e veja a tabela completa <i class='fa fa-angle-right' aria-hidden='true'></i></div></div>");
 						quantidade = 1;
 
 					});
-					
+
 					if(quantidade==0){
 						$('#tabela_conteudo').html("<div class='lista-titulo'>"+campeonato_nome+"<br><span>"+categoria_nome+"</span></div><div class='grupos-nenhum'>Não existe informações cadastradas.</div>");
 					}else{
 						$('#tabela_conteudo').html("<div class='lista-titulo'>"+campeonato_nome+"<br><span>"+categoria_nome+"</span></div><div class='eliminatorias'></div>"+items.join("")+"<div class='artilheiros'></div>");
 					}
-					
-					$.post("https://playfc.com.br/app_api/obter_jogos_eliminatorias.php", { id:categoria, data:'', atuais:'true' }, function(data){
+
+					$.post("https://playfc.com.br/app_api_v2/obter_jogos_eliminatorias.php", { id:categoria, data:'', atuais:'true' }, function(data){
 						if(data!=''){
 							$('.eliminatorias').html(data);
 							$('.eliminatorias').show();
 						}
 					});
-					
+
 					$.each(info,function(data){
-						
+
 						$.post("https://playfc.com.br/campeonatos/Informacoes_Campeonato/getTabelaGrupo", { id:info[data].idGrupo }, function(data2){
 							var info2 = JSON.parse(data2);
 							var items2 = [];
@@ -165,24 +165,24 @@
 							$.each(info2,function(data2){
 								items2.push( "<div class='lista-grupos-equipes'><div class='lista-grupos-equipes-nome'>"+info2[data2].equipe+"</div><div class='lista-grupos-equipes-pontos'>"+info2[data2].pontos+"</div><div class='lista-grupos-equipes-pontos'>"+info2[data2].jogos+"</div><div class='lista-grupos-equipes-pontos'>"+info2[data2].vitoria+"</div><div class='lista-grupos-equipes-pontos'>"+info2[data2].empate+"</div><div class='lista-grupos-equipes-pontos'>"+info2[data2].derrota+"</div><div class='lista-grupos-equipes-pontos'>"+info2[data2].golsP+"</div><div style='clear:both;'></div></div>");
 							});
-		
+
 							$("#lista_equipes_"+info[data].idGrupo).html(items2.join(""));
-							
+
 						});
 
 					});
-					
+
 					$.post("https://playfc.com.br/campeonatos/Informacoes_Campeonato/getArtilheirosCategoria", { id:categoria }, function(data){
 						var info3 = JSON.parse(data);
 						var items3 = [];
-							
+
 						$.each(info3,function(data3){
 							items3.push( "<div class='artilheiros-lista'><div class='artilheiros-lista-icone'><i class='fa fa-trophy' aria-hidden='true'></i></div><div class='artilheiros-lista-texto'>"+info3[data3].jogador+"<br><span>"+info3[data3].equipe+"</span></div><div class='artilheiros-lista-gols'>"+info3[data3].gols+"</div><div style='clear:both;'></div></div>");
 						});
-						
+
 						$('.artilheiros').html("<div class='artilheiros-titulo'>ARTILHEIROS<br><span>"+campeonato_nome+" - "+categoria_nome+"</span></div>"+items3.join(""));
 					});
-					
+
 					$('.lista-grupos').click(function(){
 						var id = $(this).attr('rel');
 						var informacoes = id.split(";#;");
@@ -190,37 +190,37 @@
 						window.localStorage.setItem('grupo_nome',informacoes[1]);
 						$.mobile.changePage("tabela_interna.html", { transition: "fade", changeHash: false });
 					});
-					
+
 				});
-				
-				
-				
+
+
+
 				$('#tabela-rodape1').click(function(){
 					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#tabela-rodape2').click(function(){
 					$.mobile.changePage("campeonatos.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#tabela-rodape3').click(function(){
 					$.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#tabela-rodape4').click(function(){
 					$.mobile.changePage("gol_home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#tabela-rodape5').click(function(){
 					$.mobile.changePage("cinema_home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 				$('#tabela-rodape6').click(function(){
 					$.mobile.changePage("noticias_home.html", { transition: "fade", changeHash: false });
 				});
-				
+
 			</script>
-		
+
 		</div>
     </body>
 </html>

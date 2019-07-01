@@ -53,41 +53,41 @@
 					<div style="border:1px solid #f7ba00; border-radius:6px; background:#f7ba00; color:#000; padding:10px; margin-top:20px; text-shadow: none; text-transform:none; text-transform:uppercase; font-family:'roboto'; text-align:center;" id="bt_cadastro_salvar">Quero me cadastrar</div>
 				</div>
 			</div>
-		
-			
+
+
 			<script>
-				
+
 				$('#cadastro_idade').mask('00/00/0000');
 				$('#cadastro_celular').mask('(00) 00000-0000');
-				
+
 				$("#bt_cadastro_salvar").click(function(){
 					var nome = $('#cadastro_nome').val();
 					var idade = $('#cadastro_idade').val();
 					var celular = $('#cadastro_celular').val();
 					var email = $('#cadastro_email').val();
 					var senha = $('#cadastro_senha').val();
-					
+
 					if(email==""){ alert("O campo E-mail deve ser preenchido"); return false; }
 					if(celular==""){ alert("O campo Celular deve ser preenchido"); return false; }
 					if(email==""){ alert("O campo E-mail deve ser preenchido"); return false; }
 					if(senha==""){ alert("O campo Senha deve ser preenchido"); return false; }
-					
-					$.get("https://playfc.com.br/app_api/cadastro.php", { nome:nome, idade:idade, celular:celular, email:email, senha:senha }, function(data){
+
+					$.get("https://playfc.com.br/app_api_v2/cadastro.php", { nome:nome, idade:idade, celular:celular, email:email, senha:senha }, function(data){
 						if(data=="ERRO_CELULAR"){
 							alert("Esse E-mail já foi utilizado em outro cadastro!");
 						}else{
 							$.mobile.changePage("cadastro_obrigado.html", { transition: "fade", changeHash: false });
 						}
 					});
-					
+
 				});
-				
+
 				$("#bt_cadastro_voltar").click(function(){
 					$.mobile.changePage("login.html", { transition: "fade", changeHash: false });
 				});
-				
+
 			</script>
-		
+
 		</div>
     </body>
 </html>
