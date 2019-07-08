@@ -43,6 +43,19 @@
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS43qBsKsxeRK93aMPtN4eQaaQk0Lg60g"></script>
 	</head>
     <body>
+	    <div style="display:none;" id="menu_lateral">
+		    <div style="background:#01adb1; position:fixed; top:0px; left:0px; width:280px; height:100%; z-index:99999; overflow:scroll;">
+			    <div style="height:100px; background:url(img/logo_jc2.png) center center no-repeat; background-size:60px;"></div>
+				<div class="menu-lateral-item" id="menu-home"><i class="fal fa-home-lg"></i>Voltar para o Início</div>
+				<div class="menu-lateral-item" id="menu-noticias"><i class="fal fa-table"></i>Notícias</div>
+				<div class="menu-lateral-item" id="menu-campeonatos"><i class="fal fa-newspaper"></i>Campeonatos</div>
+				<div class="menu-lateral-item" id="menu-goool"><i class="fal fa-birthday-cake"></i>Play FC Goool!</div>
+				<div class="menu-lateral-item" id="menu-cinema"><i class="fal fa-medal"></i>Play FC Cinema</div>
+				<div class="menu-lateral-item" id="menu-preferencias"><i class="fal fa-cogs"></i>Preferências</div>
+		    </div>
+		    <div style="background-color:rgba(0,0,0,0.8); position:fixed; top:0px; right:0px; width:calc(100% - 280px); height:100%; z-index:99999;" id="fechar_menu"></div>
+	    </div>
+	    
 	    <div style='display:none;'><iframe width='320' height='30' id='iframe_foto' name='iframe_foto' src='' frameborder='0' allowfullscreen></iframe></div>
 		<div id="checarConexao" style="width:100%; height:100%; position:fixed; top:0px; left:0px; z-index:99999; background-color:rgba(0,0,0,0.9); text-align:center; color:#FFF; display:none;"><br><br><br><br><img src="./img/warning.png" width="200"><br><br><br><br>SEM CONEXÃO NO MOMENTO!</div>
 		<div id="aguardePagamento" style="width:100%; height:100%; position:fixed; top:0px; left:0px; z-index:99999; background-color:rgba(0,0,0,0.9); text-align:center; color:#FFF; display:none;"><br><br><br><br><br><br><br><br>AGUARDE!</div>
@@ -52,6 +65,13 @@
 			<script>
 				
 				var jaFicouOffline = 0;
+				
+				$('#menu-home').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("home.html", { transition: "none", changeHash: false }); });
+				$('#menu-noticias').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("noticias_home.html", { transition: "none", changeHash: false }); });
+				$('#menu-campeonatos').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("campeonatos.html", { transition: "none", changeHash: false }); });
+				$('#menu-goool').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("gol_home.html", { transition: "none", changeHash: false }); });
+				$('#menu-cinema').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("cinema_home.html", { transition: "none", changeHash: false }); });
+				$('#menu-preferencias').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("preferencias.html", { transition: "none", changeHash: false }); });
 				
 				document.addEventListener("deviceready", onDeviceReady, true);
 				document.addEventListener("online", onOnLine, true);
