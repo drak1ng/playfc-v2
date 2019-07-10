@@ -37,11 +37,17 @@
 
 		    <div class="novo-topo">
 			    <img src="../img/logo_03.png" class="novo-topo-logo" />
-				<div class="novo-topo-botao-preferencias"><i class="fal fa-cog"></i></div>
-				<div class="novo-topo-botao-menu"><i class="far fa-bars"></i></div>
-				<div class="novo-topo-imagem"></div>
+				<div class="novo-topo-botao-preferencias" id="home-preferencias"><i class="fal fa-cog"></i></div>
+				<div class="novo-topo-botao-menu" id="home-menu"><i class="far fa-bars"></i></div>
+				<div class="novo-topo-imagem" id="home-imagem"></div>
 				<div style="clear:both;"></div>
 		    </div>
+		    
+		    <script>
+			    $('#home-imagem').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+				$('#home-preferencias').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+				$('#home-menu').click(function(){ $('#menu_lateral').show(); });
+		    </script>
 		    
 
 			<div role="main" class="ui-content" style="text-align:center;">
