@@ -65,15 +65,6 @@
 				</div>
 			</div>
 
-			<div class="botoes-rodape">
-				<div class="botoes-rodape1" id="cinema-home-rodape1"><i class="fa fa-home" aria-hidden="true"></i></div>
-				<div class="botoes-rodape6" id="cinema-home-rodape6"><i class="fa fa-newspaper-o" aria-hidden="true"></i></div>
-				<div class="botoes-rodape2" id="cinema-home-rodape2"><i class="fa fa-futbol-o" aria-hidden="true"></i></div>
-				<div class="botoes-rodape4" id="cinema-home-rodape4"><i class="fa fa-microphone" aria-hidden="true"></i></div>
-				<div class="botoes-rodape5" id="cinema-home-rodape5"><i class="fa fa-ticket" aria-hidden="true" style="color:#DE0005;"></i></div>
-				<div class="botoes-rodape3" id="cinema-home-rodape3"><i class="fa fa-cogs" aria-hidden="true"></i></div>
-			</div>
-
 			<script>
 
 				var tipo_usuarios = window.localStorage.getItem('tipo_usuarios');
@@ -82,31 +73,6 @@
 
 				$.get("https://playfc.com.br/app_api_v2/cinema-home.php", function(data){
 					$("#cinema-home-conteudo").html(data);
-				});
-
-
-
-				$('#cinema-home-rodape1').click(function(){
-					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
-				});
-
-				$('#cinema-home-rodape2').click(function(){
-					$.mobile.changePage("campeonatos.html", { transition: "fade", changeHash: false });
-				});
-
-				$('#cinema-home-rodape3').click(function(){
-					$.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false });
-				});
-
-				$('#cinema-home-rodape4').click(function(){
-					$.mobile.changePage("gol_home.html", { transition: "fade", changeHash: false });
-				});
-
-				$('#cinema-home-rodape5').click(function(){
-				});
-
-				$('#cinema-home-rodape6').click(function(){
-					$.mobile.changePage("noticias_home.html", { transition: "fade", changeHash: false });
 				});
 
 			</script>
