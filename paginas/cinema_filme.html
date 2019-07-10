@@ -35,6 +35,21 @@
 
 	    <div data-role="page">
 
+		    <div class="novo-topo">
+			    <img src="../img/logo_03.png" class="novo-topo-logo" id="cinema-filme-logo" />
+				<div class="novo-topo-botao-preferencias" id="cinema-filme-preferencias"><i class="fal fa-cog"></i></div>
+				<div class="novo-topo-botao-menu" id="cinema-filme-menu"><i class="far fa-bars"></i></div>
+				<div class="novo-topo-imagem" id="cinema-filme-imagem"></div>
+				<div style="clear:both;"></div>
+		    </div>
+		    
+		    <script>
+			    $('#cinema-filme-logo').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
+			    $('#cinema-filme-imagem').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+				$('#cinema-filme-preferencias').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+				$('#cinema-filme-menu').click(function(){ $('#menu_lateral').show(); });
+		    </script>
+
 		    <div class="topo">
 			    <div class="logotipo" style="background:#DE0005;">
 				    <div style="min-width:10px; float:left; color:#000; padding:10px 10px; margin:-10px 0px -10px -10px;" id="bt-cinema-filme-voltar"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>

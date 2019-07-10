@@ -35,6 +35,21 @@
 
 	    <div data-role="page">
 
+		    <div class="novo-topo">
+			    <img src="../img/logo_03.png" class="novo-topo-logo" id="gol-home-logo" />
+				<div class="novo-topo-botao-preferencias" id="gol-home-preferencias"><i class="fal fa-cog"></i></div>
+				<div class="novo-topo-botao-menu" id="gol-home-menu"><i class="far fa-bars"></i></div>
+				<div class="novo-topo-imagem" id="gol-home-imagem"></div>
+				<div style="clear:both;"></div>
+		    </div>
+		    
+		    <script>
+			    $('#gol-home-logo').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
+			    $('#gol-home-imagem').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+				$('#gol-home-preferencias').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+				$('#gol-home-menu').click(function(){ $('#menu_lateral').show(); });
+		    </script>
+
 		    <div class="topo">
 			    <div class="logotipo">
 				    <div style="min-width:10px; float:right; color:#000; padding:10px 10px; margin:-10px 0px -10px -10px;" id="bt-gol-home-novo"><i class="fa fa-plus" aria-hidden="true"></i></div>

@@ -35,6 +35,21 @@
 
 	    <div data-role="page">
 
+		    <div class="novo-topo">
+			    <img src="../img/logo_03.png" class="novo-topo-logo" id="noticia-home-logo" />
+				<div class="novo-topo-botao-preferencias" id="noticia-home-preferencias"><i class="fal fa-cog"></i></div>
+				<div class="novo-topo-botao-menu" id="noticia-home-menu"><i class="far fa-bars"></i></div>
+				<div class="novo-topo-imagem" id="noticia-home-imagem"></div>
+				<div style="clear:both;"></div>
+		    </div>
+		    
+		    <script>
+			    $('#noticia-home-logo').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
+			    $('#noticia-home-imagem').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+				$('#noticia-home-preferencias').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+				$('#noticia-home-menu').click(function(){ $('#menu_lateral').show(); });
+		    </script>
+
 		    <div class="topo">
 			    <div class="logotipo" style="background:#14A7F8;">
 				    <div style="margin:0px 80px; text-align:center; color:#000; font-family:'roboto';" id="noticias-home-titulo"><b>NOTÍCIAS<b></div>

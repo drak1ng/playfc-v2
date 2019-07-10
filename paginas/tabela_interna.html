@@ -35,6 +35,21 @@
 
 	    <div data-role="page">
 
+		    <div class="novo-topo">
+			    <img src="../img/logo_03.png" class="novo-topo-logo" id="tabela-interna-logo" />
+				<div class="novo-topo-botao-preferencias" id="tabela-interna-preferencias"><i class="fal fa-cog"></i></div>
+				<div class="novo-topo-botao-menu" id="tabela-interna-menu"><i class="far fa-bars"></i></div>
+				<div class="novo-topo-imagem" id="tabela-interna-imagem"></div>
+				<div style="clear:both;"></div>
+		    </div>
+		    
+		    <script>
+			    $('#tabela-interna-logo').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
+			    $('#tabela-interna-imagem').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+				$('#tabela-interna-preferencias').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+				$('#tabela-interna-menu').click(function(){ $('#menu_lateral').show(); });
+		    </script>
+
 		    <div class="topo">
 			    <div class="logotipo">
 				    <div style="min-width:10px; float:left; color:#000; padding:10px 10px; margin:-10px 0px -10px -10px;" id="bt_tabela_interna_voltar"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
