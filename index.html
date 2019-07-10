@@ -42,13 +42,13 @@
 		<script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS43qBsKsxeRK93aMPtN4eQaaQk0Lg60g"></script>
 		<style>
-			.menu-lateral-item	{ text-align:left; color:#000; padding:20px 20px; border-top:1px solid #FFF; border-color:rgba(255,255,255,0.2); font-size:17px; text-transform:none; }
+			.menu-lateral-item	{ text-align:left; color:#000; padding:20px 20px; border-top:1px solid #947023; font-size:17px; text-transform:none; margin:10px 0px; }
 			.menu-lateral-item i	{ display:block; float:left; width:40px; font-size:20px; color:#947023; }
 		</style>
 	</head>
     <body>
 	    <div style="display:none;" id="menu_lateral">
-		    <div style="background:#ebe6e1; position:fixed; top:0px; left:0px; width:280px; height:100%; z-index:99999; overflow:scroll; padding:0px 15px">
+		    <div style="background:#ebe6e1; position:fixed; top:0px; right:0px; width:250px; height:100%; z-index:99999; overflow:scroll; padding:0px 15px">
 			    <div style="height:100px; background:url(img/logo_jc2.png) center center no-repeat; background-size:60px;"></div>
 				<div class="menu-lateral-item" id="menu-home"><i class="fal fa-home-lg"></i>Voltar para o Início</div>
 				<div class="menu-lateral-item" id="menu-noticias"><i class="fal fa-table"></i>Notícias</div>
@@ -57,7 +57,7 @@
 				<div class="menu-lateral-item" id="menu-cinema"><i class="fal fa-medal"></i>Play FC Cinema</div>
 				<div class="menu-lateral-item" id="menu-preferencias"><i class="fal fa-cogs"></i>Preferências</div>
 		    </div>
-		    <div style="background-color:rgba(0,0,0,0.8); position:fixed; top:0px; right:0px; width:calc(100% - 280px); height:100%; z-index:99999;" id="fechar_menu"></div>
+		    <div style="background-color:rgba(0,0,0,0.8); position:fixed; top:0px; left:0px; width:calc(100% - 280px); height:100%; z-index:99999;" id="fechar_menu"></div>
 	    </div>
 	    
 	    <div style='display:none;'><iframe width='320' height='30' id='iframe_foto' name='iframe_foto' src='' frameborder='0' allowfullscreen></iframe></div>
