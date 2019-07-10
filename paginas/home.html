@@ -51,38 +51,18 @@
 		    
 
 			<div role="main" class="ui-content" style="text-align:center;">
-				<div class="conteudo" id="home_conteudo">
-					<center>
-					    <img src="../img/logo_preto.png" alt="PLAYFC" width="180" style="margin:20px 0px 10px 0px;" id="home-logo">
-					</center>
-					<div id="home_noticias"></div>
-					<div style="clear:both;"></div>
-				</div>
+				<div class="conteudo" id="home_conteudo"></div>
 			</div>
-
-			<style>
-				#home_conteudo					{ margin:-11px -26px 60px -26px; padding:20px; }
-				.home-itens1					{ border:1px solid #000; background:#FFF; width:calc(100% - 12px); margin:5px; float:left; text-align:center; border-radius:6px; padding:10px 0px; font-weight:700; }
-				.home-itens1 i					{ display:block; font-size:50px; color:#666; text-align:center; padding:10px 0px; }
-				.home-itens2					{ border:1px solid #000; background:#666; width:calc(50% - 12px); margin:5px; float:left; text-align:center; border-radius:6px; padding:10px 0px; color:#CCC; }
-				.home-itens2 i					{ display:block; font-size:30px; color:#ccc; text-align:center; padding:10px 0px; }
-			</style>
 
 			<script>
 
 				var tipo_usuarios = window.localStorage.getItem('tipo_usuarios');
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
-
-
-
+				
 				window.localStorage.setItem('noticia_pagina_anterior','home.html');
 
-				$.get("https://playfc.com.br/app_api_v2/home-noticias.php", function(data){ $("#home_noticias").html(data); });
-
-				$('#home-rodape1').click(function(){
-
-				});
+				$.get("https://playfc.com.br/app_api_v2/home-noticias.php", function(data){ $("#home_conteudo").html(data); });
 
 			</script>
 
