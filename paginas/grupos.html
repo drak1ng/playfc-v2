@@ -73,10 +73,10 @@
 				
 				.campeonatos-app-titulo			{ background:#947023; color:#FFF; text-align:center; padding:10px 0px; font-weight:bold; font-size:18px; margin:60px -20px 0px -20px; text-transform:none; }
 				
-				.lista-titulo					{ text-align:center; background:#ddd; padding:10px 0px; font-weight:bold; font-size:18px; margin-top:-6px; }
-				.lista-divisao					{ border-top:1px solid #CCC; border-bottom:1px solid #CCC; background:transparent; padding:30px 15px 15px 15px; margin-bottom:-1px; color:#000; line-height:20px; font-size:24px; font-weight:normal; text-align:left; text-transform:lowercase; }
+				.lista-titulo					{ text-align:center; background:#947023; padding:10px 0px; font-weight:bold; font-size:18px; margin-top:-6px; color:#FFF; text-transform:lowercase; }
+				.lista-divisao					{ border-top:1px solid #999; border-bottom:1px solid #CCC; background:transparent; padding:30px 15px 15px 15px; margin-bottom:-1px; color:#000; line-height:20px; font-size:24px; font-weight:normal; text-align:left; text-transform:lowercase; }
 				.lista-caixa					{ display:; }
-				.lista-categorias				{ border-top:1px solid #CCC; border-bottom:1px solid #CCC; background:#FFF; padding:15px; margin-bottom:-1px; color:#666; line-height:20px; font-size:13px; }
+				.lista-categorias				{ border-top:1px solid #999; border-bottom:1px solid #999; background:#FFF; padding:15px; margin-bottom:-1px; color:#000; line-height:20px; font-size:13px; }
 				.lista-categorias b				{ font-size:15px; }
 				.lista-categorias i				{ display:block; float:left; font-size:30px; padding:5px 15px 0px 0px; }
 			</style>
@@ -113,9 +113,9 @@
 					console.log(info);
 					$.each(info,function(data){
 						if(info[data].divisao=="masc"){
-							items_m.push( "<div class='lista-categorias' title='"+info[data].titulo+"' rel='"+info[data].idCategoria+";#;"+info[data].titulo+";#;"+info[data].campeonato+"'><i class='fa fa-futbol-o' aria-hidden='true'></i><b>"+info[data].titulo+"</b><br>Campeonato "+info[data].campeonato+"</div>");
+							items_m.push( "<div class='lista-categorias' title='"+info[data].titulo+"' rel='"+info[data].idCategoria+";#;"+info[data].titulo+";#;"+info[data].campeonato+"'><i class='fal fa-futbol' aria-hidden='true'></i><b>"+info[data].titulo+"</b><br>Campeonato "+info[data].campeonato+"</div>");
 						}else{
-							items_f.push( "<div class='lista-categorias' title='"+info[data].titulo+"' rel='"+info[data].idCategoria+";#;"+info[data].titulo+";#;"+info[data].campeonato+"'><i class='fa fa-futbol-o' aria-hidden='true'></i><b>"+info[data].titulo+"</b><br>Campeonato "+info[data].campeonato+"</div>");
+							items_f.push( "<div class='lista-categorias' title='"+info[data].titulo+"' rel='"+info[data].idCategoria+";#;"+info[data].titulo+";#;"+info[data].campeonato+"'><i class='fal fa-futbol' aria-hidden='true'></i><b>"+info[data].titulo+"</b><br>Campeonato "+info[data].campeonato+"</div>");
 						}
 					});
 
