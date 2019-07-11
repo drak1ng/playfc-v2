@@ -49,9 +49,11 @@
 				$('#tabela-preferencias').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
 				$('#tabela-menu').click(function(){ $('#menu_lateral').show(); });
 		    </script>
+		    
+			<div class="campeonatos-app-titulo">campeonatos</div>
 
-		    <div class="topo">
-			    <div class="logotipo">
+		    <div class="topo" style="margin-top:102px;">
+			    <div class="logotipo" style="padding:10px; text-transform:lowercase; background:#FFF;">
 				    <div style="min-width:10px; float:left; color:#000; padding:10px 10px; margin:-10px 0px -10px -10px;" id="bt_tabela_voltar"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
 				    <div style="margin:0px 80px; text-align:center; color:#000; font-family:'roboto';" id="tabela-titulo"><b>PLAY FC - RESULTADOS<b></div>
 				</div>
@@ -68,6 +70,8 @@
 
 			<style>
 				#tabela_conteudo				{ margin:9px -16px 60px -16px; padding:10px; }
+				
+				.campeonatos-app-titulo			{ background:#947023; color:#FFF; text-align:center; padding:10px 0px; font-weight:bold; font-size:18px; margin:60px -20px 0px -20px; text-transform:none; }
 
 				.grupos-nenhum					{ margin:10px 5px; padding:10px; border-radius:6px; background:#FFF; text-align:center; padding:20px 0px; }
 
