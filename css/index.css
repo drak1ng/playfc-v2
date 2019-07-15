@@ -59,8 +59,8 @@ body {
 .novo-topo								{ padding:10px; background:#ebe6e1; width:calc(100% - 20px); top:0px; left:0px; position:fixed; z-index:99997; }
 .novo-topo-logo							{ height:30px; float:left; margin:5px; }
 .novo-topo-imagem						{ width:40px; height:40px; margin:0px 10px; float:right; border-radius:5px; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); background:center center no-repeat #FFF; background-size:cover; }
-.novo-topo-botao-menu					{ width:40px; height:40px; margin:0px 0px; float:right; border-radius:5px 0px 0px 5px; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); background:#FFF; text-align:center; display:flex; align-items:center; justify-content:center; color:#000; font-size:16px; margin-right:-1px; }
-.novo-topo-botao-preferencias			{ width:40px; height:40px; margin:0px 0px; float:right; border-radius:0px 5px 5px 0px; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); background:#FFF; text-align:center; display:flex; align-items:center; justify-content:center; color:#000; font-size:16px; }
+.novo-topo-botao-menu					{ width:40px; height:40px; margin:0px 0px; float:right; border-radius:0px 5px 5px 0px; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); background:#FFF; text-align:center; display:flex; align-items:center; justify-content:center; color:#000; font-size:16px; }
+.novo-topo-botao-preferencias			{ width:40px; height:40px; margin:0px 0px; float:right; border-radius:5px 0px 0px 5px; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); background:#FFF; text-align:center; display:flex; align-items:center; justify-content:center; color:#000; font-size:16px; margin-right:-1px; }
 
 .menu-container { width:100%; height:100%; position:fixed; top:0px; left:0px; background-color:rgba(0,0,0,0.7); z-index:9999; display:none; }
 .menu-container-externo { width:calc(100% - 200px); height:100%; float:left;  }
