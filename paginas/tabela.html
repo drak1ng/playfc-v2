@@ -161,7 +161,7 @@
 					if(quantidade==0){
 						$('#tabela_conteudo').html("<div class='lista-titulo'>"+campeonato_nome+"<br><span>"+categoria_nome+"</span></div><div class='grupos-nenhum'>Não existe informações cadastradas.</div>");
 					}else{
-						$('#tabela_conteudo').html("<div class='lista-titulo'>"+campeonato_nome+"<br><span>"+categoria_nome+"</span></div><div class='lista-abas'><div class='lista-abas1'>Resultados</div><div class='lista-abas2'>Grupos</div><div class='lista-abas3'>Artilheiros</div><div style='clear:both;'></div></div><div class='eliminatorias' style='display:none;'></div>"+items.join("")+"<div class='artilheiros' style='display:none;'></div>");
+						$('#tabela_conteudo').html("<div class='lista-titulo'>"+campeonato_nome+"<br><span>"+categoria_nome+"</span></div><div class='lista-abas'><div class='lista-abas1'>Resultados</div><div class='lista-abas2'>Grupos</div><div class='lista-abas3'>Artilheiros</div><div style='clear:both;'></div></div><div class='eliminatorias' style='display:none;'></div><div class='grupos' style='display:none;'>"+items.join("")+"</div><div class='artilheiros' style='display:none;'></div>");
 					}
 					
 					
@@ -172,8 +172,8 @@
 						$('.lista-abas3').css('background','#b49043');
 						
 						$('.eliminatorias').show();
+						$('.grupos').hide();
 						$('.artilheiros').hide();
-						$('.lista-grupos').show();
 					});
 					
 					$('.lista-abas2').click(function(){
@@ -181,9 +181,9 @@
 						$('.lista-abas2').css('background','#745003');
 						$('.lista-abas3').css('background','#b49043');
 						
-						$('.eliminatorias').show();
+						$('.eliminatorias').hide();
+						$('.grupos').show();
 						$('.artilheiros').hide();
-						$('.lista-grupos').hide();
 					});
 					
 					$('.lista-abas3').click(function(){
@@ -192,8 +192,8 @@
 						$('.lista-abas3').css('background','#745003');
 						
 						$('.eliminatorias').hide();
+						$('.grupos').hide();
 						$('.artilheiros').show();
-						$('.lista-grupos').hide();
 					});
 
 					$.post("https://playfc.com.br/app_api_v2/obter_jogos_eliminatorias.php", { id:categoria, data:'', atuais:'true' }, function(data){
