@@ -110,6 +110,11 @@
 				.jogos-lista-times				{ background:#ebe6e1; text-align:center; padding:10px 0px; text-transform:uppercase; font-size:12px; line-height:15px; border:1px solid #947023; }
 				.jogos-lista-dados				{ font-weight:normal; font-size:12px; background:#947023; border-radius:0px 0px 5px 5px; color:#FFF; text-align:center; padding:5px; }
 				.jogos-lista-dados span			{ font-weight:normal; }
+				
+				.lista-abas						{ border-bottom:2px solid #000; }
+				.lista-abas1					{ width:calc(33.3333%); float:left; padding:10px 0px; text-align:center; background:#000; color:#FFF; }
+				.lista-abas2					{ width:calc(33.3333%); float:left; padding:10px 0px; text-align:center; background:#FFF; color:#000; }
+				.lista-abas3					{ width:calc(33.3333%); float:left; padding:10px 0px; text-align:center; background:#FFF; color:#000; }
 
 			</style>
 
@@ -156,7 +161,16 @@
 					if(quantidade==0){
 						$('#tabela_conteudo').html("<div class='lista-titulo'>"+campeonato_nome+"<br><span>"+categoria_nome+"</span></div><div class='grupos-nenhum'>Não existe informações cadastradas.</div>");
 					}else{
-						$('#tabela_conteudo').html("<div class='lista-titulo'>"+campeonato_nome+"<br><span>"+categoria_nome+"</span></div><div class='eliminatorias'></div>"+items.join("")+"<div class='artilheiros'></div>");
+						$('#tabela_conteudo').html("<div class='lista-titulo'>"+campeonato_nome+"<br><span>"+categoria_nome+"</span></div>
+						
+						<div class='lista-abas'>
+							<div class='lista-abas1'>Resultados</div>
+							<div class='lista-abas2'>Grupos</div>
+							<div class='lista-abas3'>Artilheiros</div>
+							<div style='clear:both;'></div>
+						</div>
+						
+						<div class='eliminatorias' style='display:none;'></div>"+items.join("")+"<div class='artilheiros' style='display:none;'></div>");
 					}
 
 					$.post("https://playfc.com.br/app_api_v2/obter_jogos_eliminatorias.php", { id:categoria, data:'', atuais:'true' }, function(data){
