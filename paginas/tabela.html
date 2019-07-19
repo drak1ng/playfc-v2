@@ -111,10 +111,10 @@
 				.jogos-lista-dados				{ font-weight:normal; font-size:12px; background:#947023; border-radius:0px 0px 5px 5px; color:#FFF; text-align:center; padding:5px; }
 				.jogos-lista-dados span			{ font-weight:normal; }
 				
-				.lista-abas						{ border-bottom:2px solid #846013; margin:0px -10px }
-				.lista-abas1					{ width:calc(33.3333%); float:left; padding:10px 0px; text-align:center; background:#846013; color:#FFF; }
-				.lista-abas2					{ width:calc(33.3333%); float:left; padding:10px 0px; text-align:center; background:#a48033; color:#FFF; }
-				.lista-abas3					{ width:calc(33.3333%); float:left; padding:10px 0px; text-align:center; background:#a48033; color:#FFF; }
+				.lista-abas						{ border-bottom:2px solid #745003; margin:0px -10px }
+				.lista-abas1					{ width:calc(33.3333%); float:left; padding:10px 0px; text-align:center; background:#745003; color:#FFF; }
+				.lista-abas2					{ width:calc(33.3333%); float:left; padding:10px 0px; text-align:center; background:#b49043; color:#FFF; }
+				.lista-abas3					{ width:calc(33.3333%); float:left; padding:10px 0px; text-align:center; background:#b49043; color:#FFF; }
 
 			</style>
 
@@ -207,7 +207,25 @@
 					});
 
 				});
-
+				
+				$('.lista-abas2').click(function(){
+					$('.lista-abas1').css('background','#b49043');
+					$('.lista-abas2').css('background','#745003');
+					$('.lista-abas3').css('background','#b49043');
+					
+					$('.eliminatorias').show();
+					$('.artilheiros').hide();
+				});
+				
+				$('.lista-abas3').click(function(){
+					$('.lista-abas1').css('background','#b49043');
+					$('.lista-abas2').css('background','#b49043');
+					$('.lista-abas3').css('background','#745003');
+					
+					$('.eliminatorias').hide();
+					$('.artilheiros').show();
+				});
+				
 			</script>
 
 		</div>
