@@ -163,6 +163,26 @@
 					}else{
 						$('#tabela_conteudo').html("<div class='lista-titulo'>"+campeonato_nome+"<br><span>"+categoria_nome+"</span></div><div class='lista-abas'><div class='lista-abas1'>Resultados</div><div class='lista-abas2'>Grupos</div><div class='lista-abas3'>Artilheiros</div><div style='clear:both;'></div></div><div class='eliminatorias' style='display:none;'></div>"+items.join("")+"<div class='artilheiros' style='display:none;'></div>");
 					}
+					
+					
+				
+					$('.lista-abas2').click(function(){
+						$('.lista-abas1').css('background','#b49043');
+						$('.lista-abas2').css('background','#745003');
+						$('.lista-abas3').css('background','#b49043');
+						
+						$('.eliminatorias').show();
+						$('.artilheiros').hide();
+					});
+					
+					$('.lista-abas3').click(function(){
+						$('.lista-abas1').css('background','#b49043');
+						$('.lista-abas2').css('background','#b49043');
+						$('.lista-abas3').css('background','#745003');
+						
+						$('.eliminatorias').hide();
+						$('.artilheiros').show();
+					});
 
 					$.post("https://playfc.com.br/app_api_v2/obter_jogos_eliminatorias.php", { id:categoria, data:'', atuais:'true' }, function(data){
 						if(data!=''){
@@ -206,24 +226,6 @@
 						$.mobile.changePage("tabela_interna.html", { transition: "fade", changeHash: false });
 					});
 
-				});
-				
-				$('.lista-abas2').click(function(){
-					$('.lista-abas1').css('background','#b49043');
-					$('.lista-abas2').css('background','#745003');
-					$('.lista-abas3').css('background','#b49043');
-					
-					$('.eliminatorias').show();
-					$('.artilheiros').hide();
-				});
-				
-				$('.lista-abas3').click(function(){
-					$('.lista-abas1').css('background','#b49043');
-					$('.lista-abas2').css('background','#b49043');
-					$('.lista-abas3').css('background','#745003');
-					
-					$('.eliminatorias').hide();
-					$('.artilheiros').show();
 				});
 				
 			</script>
