@@ -44,6 +44,8 @@
 		    </div>
 		    
 		    <script>
+				var foto_usuarios = window.localStorage.getItem('foto_usuarios');
+				$('#home-imagem').css('background-image','url('+foto_usuarios+')');
 			    $('#home-imagem').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
 				$('#home-preferencias').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
 				$('#home-menu').click(function(){ $('#menu_lateral').show(); });

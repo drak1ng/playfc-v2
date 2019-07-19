@@ -44,6 +44,8 @@
 		    </div>
 		    
 		    <script>
+				var foto_usuarios = window.localStorage.getItem('foto_usuarios');
+				$('#gol-busca-imagem').css('background-image','url('+foto_usuarios+')');
 			    $('#gol-busca-logo').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
 			    $('#gol-busca-imagem').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
 				$('#gol-busca-preferencias').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
