@@ -91,6 +91,8 @@
 							window.localStorage.setItem('id_usuarios',res[0]);
 							window.localStorage.setItem('nome_usuarios',res[1]);
 							window.localStorage.setItem('tipo_usuarios',res[2]);
+							window.localStorage.setItem('foto_usuarios',res[3]);
+							$('.menu-lateral-imagem').css('background-image','url('+res[3]+')');
 							$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 						}
 					});
