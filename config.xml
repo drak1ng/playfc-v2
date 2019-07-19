@@ -104,6 +104,11 @@
 <gap:plugin name="cordova-plugin-dialogs" source="npm"  />
 <gap:plugin name="cordova-plugin-device" source="npm" />
 
+<gap:plugin name="cordova-plugin-streaming-media" source="npm" />
+
+<gap:plugin name="cordova-plugin-camera" source="npm" />
+<gap:plugin name="cordova-plugin-ios-camera-permissions" source="npm" />
+
 
 <!-- Teclado sobrepondo para o android, igual iphone -->
 <!--<preference name="android-windowSoftInputMode" value="adjustPan" />-->
