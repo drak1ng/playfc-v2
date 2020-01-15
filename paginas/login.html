@@ -55,7 +55,7 @@
 		    <div style="background:#FFF; width:100%; height:160px; text-align:center; padding:40px 0px 0px 0px; position:absolute; top:0px; left:0px; z-index:99999999 !important;">
 		    	<img src="../img/logo_02.png" alt="PLAYFC" width="180" />
 		    </div>
-			<div style="width:300px; height:240px; position:fixed; top:50%; left:50%; margin:-160px 0px 0px -150px;">
+			<div id="div-opts" style="width:300px; height:240px; position:fixed; top:50%; left:50%; margin:-160px 0px 0px -150px;">
 				<br><br><br>
 				<div class="login-opt-botao" style="background:#FFFFFF !important; border-radius:6px; color:#D4954A; padding:15px 20px; width:150px; margin:10px auto; text-align:left;" id="login-opt-professor"><i class="fal fa-chalkboard-teacher" style="width:40px; text-align:center;"></i> Professor</div>
 				<div class="login-opt-botao" style="background:#FFFFFF !important; border-radius:6px; color:#D4954A; padding:15px 20px; width:150px; margin:10px auto; text-align:left;" id="login-opt-players"><i class="fal fa-futbol" style="width:40px; text-align:center;"></i> Players</div>
@@ -102,9 +102,9 @@
 						$.mobile.changePage("home.html", { transition: "none", changeHash: false });
 					}
 					
-					$('#login-opt-professor').click(function(){ $('#div-professor').show(); $('#div-players').hide(); $('#div-torcidas').hide(); });
-					$('#login-opt-players').click(function(){ $('#div-professor').hide(); $('#div-players').show(); $('#div-torcidas').hide(); });
-					$('#login-opt-torcidas').click(function(){ $('#div-professor').hide(); $('#div-players').hide(); $('#div-torcidas').show(); });
+					$('#login-opt-professor').click(function(){ $('#div-opts').hide(); $('#div-professor').show(); $('#div-players').hide(); $('#div-torcidas').hide(); });
+					$('#login-opt-players').click(function(){ $('#div-opts').hide(); $('#div-professor').hide(); $('#div-players').show(); $('#div-torcidas').hide(); });
+					$('#login-opt-torcidas').click(function(){ $('#div-opts').hide(); $('#div-professor').hide(); $('#div-players').hide(); $('#div-torcidas').show(); });
 					
 				});
 
