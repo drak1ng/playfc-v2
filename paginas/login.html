@@ -57,11 +57,11 @@
 		    </div>
 			<div style="width:300px; height:240px; position:fixed; top:50%; left:50%; margin:-160px 0px 0px -150px;">
 				<br><br><br>
-				<div class="login-opt-botao" style="background:#FFFFFF !important; border-radius:6px; color:#D4954A; padding:15px 20px; width:150px; margin:10px auto; text-align:left;" id="login-opt-professor"><i class="fal fa-chalkboard-teacher" style="width:20px;"></i> Professor</div>
-				<div class="login-opt-botao" style="background:#FFFFFF !important; border-radius:6px; color:#D4954A; padding:15px 20px; width:150px; margin:10px auto; text-align:left;" id="login-opt-players"><i class="fal fa-futbol" style="width:20px;"></i> Players</div>
-				<div class="login-opt-botao" style="background:#FFFFFF !important; border-radius:6px; color:#D4954A; padding:15px 20px; width:150px; margin:10px auto; text-align:left;" id="login-opt-torcidas"><i class="fal fa-users" style="width:20px;"></i> Torcidas</div>
+				<div class="login-opt-botao" style="background:#FFFFFF !important; border-radius:6px; color:#D4954A; padding:15px 20px; width:150px; margin:10px auto; text-align:left;" id="login-opt-professor"><i class="fal fa-chalkboard-teacher" style="width:40px; text-align:center;"></i> Professor</div>
+				<div class="login-opt-botao" style="background:#FFFFFF !important; border-radius:6px; color:#D4954A; padding:15px 20px; width:150px; margin:10px auto; text-align:left;" id="login-opt-players"><i class="fal fa-futbol" style="width:40px; text-align:center;"></i> Players</div>
+				<div class="login-opt-botao" style="background:#FFFFFF !important; border-radius:6px; color:#D4954A; padding:15px 20px; width:150px; margin:10px auto; text-align:left;" id="login-opt-torcidas"><i class="fal fa-users" style="width:40px; text-align:center;"></i> Torcidas</div>
 			</div>
-			<div style="width:300px; height:240px; position:fixed; top:50%; left:50%; margin:-160px 0px 0px -150px; display:none;">
+			<div id="div-professor" style="width:300px; height:240px; position:fixed; top:50%; left:50%; margin:-160px 0px 0px -150px; display:none;">
 				<br><br><br>
 				<input type="email" id="login_email" value="e-mail" class="login-email" style="border:0px solid #CCC; border-bottom:1px solid #FFF; border-radius:0px; background-color:transparent; font-family:'roboto'; text-shadow:none; padding:10px; color:#FFF; margin-top:10px;">
 				<input type="password" id="login_senha" value="senha" class="login-senha" style="border:0px solid #CCC; border-bottom:1px solid #FFF; border-radius:0px; background-color:transparent; font-family:'roboto'; text-shadow:none; padding:10px; color:#FFF; margin-top:10px;">
@@ -70,7 +70,7 @@
 				<div style="clear:both;"></div>
 			</div>
 			
-			<div style="width:300px; height:240px; position:fixed; top:50%; left:50%; margin:-160px 0px 0px -150px; display:none;">
+			<div id="div-players" style="width:300px; height:240px; position:fixed; top:50%; left:50%; margin:-160px 0px 0px -150px; display:none;">
 				<br><br><br>
 				<input type="email" id="login_email" value="e-mail" class="login-email" style="border:0px solid #CCC; border-bottom:1px solid #FFF; border-radius:0px; background-color:transparent; font-family:'roboto'; text-shadow:none; padding:10px; color:#FFF; margin-top:10px;">
 				<input type="password" id="login_senha" value="senha" class="login-senha" style="border:0px solid #CCC; border-bottom:1px solid #FFF; border-radius:0px; background-color:transparent; font-family:'roboto'; text-shadow:none; padding:10px; color:#FFF; margin-top:10px;">
@@ -79,7 +79,7 @@
 				<div style="clear:both;"></div>
 			</div>
 			
-			<div style="width:300px; height:240px; position:fixed; top:50%; left:50%; margin:-160px 0px 0px -150px; display:none;">
+			<div id="div-torcidas" style="width:300px; height:240px; position:fixed; top:50%; left:50%; margin:-160px 0px 0px -150px; display:none;">
 				<br><br><br>
 				<input type="email" id="login_email" value="e-mail" class="login-email" style="border:0px solid #CCC; border-bottom:1px solid #FFF; border-radius:0px; background-color:transparent; font-family:'roboto'; text-shadow:none; padding:10px; color:#FFF; margin-top:10px;">
 				<input type="password" id="login_senha" value="senha" class="login-senha" style="border:0px solid #CCC; border-bottom:1px solid #FFF; border-radius:0px; background-color:transparent; font-family:'roboto'; text-shadow:none; padding:10px; color:#FFF; margin-top:10px;">
@@ -101,6 +101,11 @@
 					if(id_usuarios!="" && id_usuarios!=null){
 						$.mobile.changePage("home.html", { transition: "none", changeHash: false });
 					}
+					
+					$('#login-opt-professor').click(function(){ $('#div-professor').show(); $('#div-players').hide(); $('#div-torcidas').hide(); });
+					$('#login-opt-players').click(function(){ $('#div-professor').hide(); $('#div-players').show(); $('#div-torcidas').hide(); });
+					$('#login-opt-torcidas').click(function(){ $('#div-professor').hide(); $('#div-players').hide(); $('#div-torcidas').show(); });
+					
 				});
 
 				$("#bt_login_acessar").click(function(){
