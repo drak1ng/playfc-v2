@@ -73,7 +73,7 @@
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
 
-				$.get("https://playfc.com.br/app_api_v2/noticias-home.php", function(data){
+				$.get("https://playfc.com.br/app_api_v3/noticias-home.php", function(data){
 					$("#noticias-home-conteudo").html(data);
 				});
 

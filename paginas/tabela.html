@@ -145,7 +145,7 @@
 					window.localStorage.setItem('id_usuarios','');
 					$.mobile.changePage("login.html", { transition: "fade", changeHash: false });
 				});
-				$.get("http://playfc.com.br/app_api_v2/home.php", { tipo_usuarios:tipo_usuarios, id_usuarios:id_usuarios, registrationId:registrationId }, function(data){ $('#home_conteudo').html(data); });
+				$.get("http://playfc.com.br/app_api_v3/home.php", { tipo_usuarios:tipo_usuarios, id_usuarios:id_usuarios, registrationId:registrationId }, function(data){ $('#home_conteudo').html(data); });
 				*/
 
 				$.post("https://playfc.com.br/campeonatos/Informacoes_Campeonato/getGruposCategoria", { id:categoria }, function(data){
@@ -198,7 +198,7 @@
 						$('.artilheiros').show();
 					});
 
-					$.post("https://playfc.com.br/app_api_v2/obter_jogos_eliminatorias.php", { id:categoria, data:'', atuais:'true' }, function(data){
+					$.post("https://playfc.com.br/app_api_v3/obter_jogos_eliminatorias.php", { id:categoria, data:'', atuais:'true' }, function(data){
 						if(data!=''){
 							$('.eliminatorias').html(data);
 							$('.eliminatorias').show();

@@ -72,7 +72,7 @@
 					if(email==""){ alert("O campo E-mail deve ser preenchido"); return false; }
 					if(senha==""){ alert("O campo Senha deve ser preenchido"); return false; }
 
-					$.get("https://playfc.com.br/app_api_v2/cadastro.php", { nome:nome, idade:idade, celular:celular, email:email, senha:senha }, function(data){
+					$.get("https://playfc.com.br/app_api_v3/cadastro.php", { nome:nome, idade:idade, celular:celular, email:email, senha:senha }, function(data){
 						if(data=="ERRO_CELULAR"){
 							alert("Esse E-mail já foi utilizado em outro cadastro!");
 						}else{

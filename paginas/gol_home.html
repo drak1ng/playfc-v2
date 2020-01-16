@@ -74,7 +74,7 @@
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
 
-				$.get("https://playfc.com.br/app_api_v2/gol-home.php", function(data){
+				$.get("https://playfc.com.br/app_api_v3/gol-home.php", function(data){
 					$("#gol-home-conteudo").html(data);
 				});
 

@@ -61,7 +61,7 @@
 					$.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false });
 				});
 
-				$.get("https://playfc.com.br/app_api_v2/configuracao_meus_gols.php", { id_usuarios:id_usuarios }, function(data){ $("#preferencias-meusgols-conteudo").html(data); });
+				$.get("https://playfc.com.br/app_api_v3/configuracao_meus_gols.php", { id_usuarios:id_usuarios }, function(data){ $("#preferencias-meusgols-conteudo").html(data); });
 
 			</script>
 

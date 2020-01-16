@@ -78,7 +78,7 @@
 					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 				});
 
-				$.get("https://playfc.com.br/app_api_v2/campeonatos.php", function(data){
+				$.get("https://playfc.com.br/app_api_v3/campeonatos.php", function(data){
 					$("#campeonatos-conteudo").html(data);
 				});
 

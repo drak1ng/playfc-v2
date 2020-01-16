@@ -74,7 +74,7 @@
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var filme_id = window.localStorage.getItem('filme_id');
 
-				$.get("https://playfc.com.br/app_api_v2/cinema-filme.php", { id:filme_id }, function(data){
+				$.get("https://playfc.com.br/app_api_v3/cinema-filme.php", { id:filme_id }, function(data){
 					$("#cinema-filme-conteudo").html(data);
 				});
 

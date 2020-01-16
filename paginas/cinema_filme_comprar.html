@@ -76,7 +76,7 @@
 				var filme_horario_id = window.localStorage.getItem('filme_horario_id');
 
 
-				$.get("https://playfc.com.br/app_api_v2/cinema-filme-horario.php", { id:filme_id, horario:filme_horario_id }, function(data){
+				$.get("https://playfc.com.br/app_api_v3/cinema-filme-horario.php", { id:filme_id, horario:filme_horario_id }, function(data){
 					$("#cinema-filme-horario-conteudo").html(data);
 				});
 

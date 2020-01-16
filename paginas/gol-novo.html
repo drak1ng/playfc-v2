@@ -76,7 +76,7 @@
 				var narracoes_busca = window.localStorage.getItem('narracoes_busca');
 
 
-				$.get("https://playfc.com.br/app_api_v2/gol-novo.php", { busca:narracoes_busca }, function(data){
+				$.get("https://playfc.com.br/app_api_v3/gol-novo.php", { busca:narracoes_busca }, function(data){
 					$("#gol-novo-conteudo").html(data);
 				});
 

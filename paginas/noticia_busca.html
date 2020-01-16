@@ -80,7 +80,7 @@
 					$.mobile.changePage("noticias_home.html", { transition: "fade", changeHash: false });
 				});
 
-				$.get("https://playfc.com.br/app_api_v2/noticia-busca.php", { busca:busca }, function(data){
+				$.get("https://playfc.com.br/app_api_v3/noticia-busca.php", { busca:busca }, function(data){
 					$("#noticias-busca-conteudo").html(data);
 				});
 

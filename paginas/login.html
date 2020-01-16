@@ -133,7 +133,7 @@
 					if(email==""){ alert("O campo E-mail deve ser preenchido"); return false; }
 					if(senha==""){ alert("O campo Senha deve ser preenchido"); return false; }
 
-					$.get("https://playfc.com.br/app_api_v2/login.php", { email:email, senha:senha }, function(data){
+					$.get("https://playfc.com.br/app_api_v3/login.php", { email:email, senha:senha }, function(data){
 						if(data=="ERRO"){
 							alert("O E-mail ou a Senha utilizados não são válidos");
 						}else{

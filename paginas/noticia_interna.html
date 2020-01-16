@@ -81,7 +81,7 @@
 					$.mobile.changePage(noticia_pagina_anterior, { transition: "fade", changeHash: false });
 				});
 
-				$.get("https://playfc.com.br/app_api_v2/noticia-interna.php", { id:noticia_id }, function(data){ $("#noticias-conteudo").html(data); });
+				$.get("https://playfc.com.br/app_api_v3/noticia-interna.php", { id:noticia_id }, function(data){ $("#noticias-conteudo").html(data); });
 
 			</script>
 
