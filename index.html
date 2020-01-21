@@ -42,7 +42,7 @@
 		<script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS43qBsKsxeRK93aMPtN4eQaaQk0Lg60g"></script>
 		<style>
-			.menu-lateral-imagem	{ border-radius:6px; width:120px; height:120px; background:center center no-repeat #FFF; background-size:cover; margin:50px auto; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); }
+			.menu-lateral-imagem	{ border-radius:6px; width:120px; height:120px; background:center center no-repeat #FFF; background-size:cover; margin:20px auto; -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); box-shadow:inset 0 0 0 1px rgba(0,0,0,0.2); }
 			.menu-lateral-item		{ text-align:left; color:#000; padding:15px 10px; border-top:1px solid #B49043; font-size:17px; text-transform:none; }
 			.menu-lateral-item i	{ display:block; float:left; width:40px; font-size:20px; color:#947023; }
 		</style>
@@ -58,10 +58,9 @@
 				<div class="menu-lateral-item" id="menu-cinema"><i class="fal fa-medal"></i>Play FC Cinema</div>
 				<div class="menu-lateral-item" id="menu-preferencias"><i class="fal fa-cogs"></i>Preferências</div>
 				<div class="menu-professor">
-					<div class="menu-lateral-item" id="menu-professor-cadastro"><i class="fal fa-cogs"></i>Meu Cadastro</div>
-					<div class="menu-lateral-item" id="menu-professor-escola"><i class="fal fa-cogs"></i>Cadastro da Escola</div>
-					<div class="menu-lateral-item" id="menu-professor-inscricoes"><i class="fal fa-cogs"></i>Inscrições</div>
-					<div class="menu-lateral-item" id="menu-professor-campeonatos"><i class="fal fa-cogs"></i>Campeonatos</div>
+					<div class="menu-lateral-item" id="menu-professor-escola"><i class="fal fa-chalkboard-teacher"></i>Cadastro da Escola</div>
+					<div class="menu-lateral-item" id="menu-professor-inscricoes"><i class="fal fa-paste"></i>Inscrições</div>
+					<div class="menu-lateral-item" id="menu-professor-campeonatos"><i class="fal fa-newspaper"></i>Campeonatos</div>
 				</div>
 		    </div>
 		    <div style="background-color:rgba(0,0,0,0.8); position:fixed; top:0px; left:0px; width:calc(100% - 280px); height:100%; z-index:99999;" id="fechar_menu"></div>
@@ -86,7 +85,6 @@
 				$('#menu-cinema').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("cinema_home.html", { transition: "none", changeHash: false }); });
 				$('#menu-preferencias').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("preferencias.html", { transition: "none", changeHash: false }); });
 				
-				$('#menu-professor-cadastro').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("professor-cadastro.html", { transition: "none", changeHash: false }); });
 				$('#menu-professor-escola').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("professor-escola.html", { transition: "none", changeHash: false }); });
 				$('#menu-professor-inscricoes').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("professor-inscricoes.html", { transition: "none", changeHash: false }); });
 				$('#menu-professor-campeonatos').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("professor-campeonatos.html", { transition: "none", changeHash: false }); });
