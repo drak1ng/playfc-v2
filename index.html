@@ -57,6 +57,12 @@
 				<div class="menu-lateral-item" id="menu-goool"><i class="fal fa-birthday-cake"></i>Play FC Goool!</div>
 				<div class="menu-lateral-item" id="menu-cinema"><i class="fal fa-medal"></i>Play FC Cinema</div>
 				<div class="menu-lateral-item" id="menu-preferencias"><i class="fal fa-cogs"></i>Preferências</div>
+				<div class="menu-professor">
+					<div class="menu-lateral-item" id="menu-professor-cadastro"><i class="fal fa-cogs"></i>Meu Cadastro</div>
+					<div class="menu-lateral-item" id="menu-professor-escola"><i class="fal fa-cogs"></i>Cadastro da Escola</div>
+					<div class="menu-lateral-item" id="menu-professor-inscricoes"><i class="fal fa-cogs"></i>Inscrições</div>
+					<div class="menu-lateral-item" id="menu-professor-campeonatos"><i class="fal fa-cogs"></i>Campeonatos</div>
+				</div>
 		    </div>
 		    <div style="background-color:rgba(0,0,0,0.8); position:fixed; top:0px; left:0px; width:calc(100% - 280px); height:100%; z-index:99999;" id="fechar_menu"></div>
 	    </div>
@@ -79,6 +85,12 @@
 				$('#menu-goool').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("gol_home.html", { transition: "none", changeHash: false }); });
 				$('#menu-cinema').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("cinema_home.html", { transition: "none", changeHash: false }); });
 				$('#menu-preferencias').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("preferencias.html", { transition: "none", changeHash: false }); });
+				
+				$('#menu-professor-cadastro').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("professor-cadastro.html", { transition: "none", changeHash: false }); });
+				$('#menu-professor-escola').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("professor-escola.html", { transition: "none", changeHash: false }); });
+				$('#menu-professor-inscricoes').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("professor-inscricoes.html", { transition: "none", changeHash: false }); });
+				$('#menu-professor-campeonatos').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("professor-campeonatos.html", { transition: "none", changeHash: false }); });
+				
 				
 				document.addEventListener("deviceready", onDeviceReady, true);
 				document.addEventListener("online", onOnLine, true);
