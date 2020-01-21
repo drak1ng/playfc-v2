@@ -96,6 +96,7 @@
 					<i class="fal fa-users" style="width:40px; text-align:center;"></i>
 					Torcidas
 				</div>
+				<input type="hidden" id="login_tipo" value="" />
 				<input type="email" id="login_email" value="e-mail" class="login-email" style="border:0px solid #CCC; border-bottom:1px solid #FFF; border-radius:0px; background-color:transparent; font-family:'roboto'; text-shadow:none; padding:10px; color:#FFF; margin-top:10px;">
 				<input type="password" id="login_senha" value="senha" class="login-senha" style="border:0px solid #CCC; border-bottom:1px solid #FFF; border-radius:0px; background-color:transparent; font-family:'roboto'; text-shadow:none; padding:10px; color:#FFF; margin-top:10px;">
 				<div style="border:1px solid #FFF; border-radius:6px; background:#FFF; color:#000; padding:8px 20px; margin-top:20px; text-shadow: none; text-transform:none; text-transform:lowercase; font-family:'roboto'; float:right;" id="bt_login_acessar">acessar</div>
@@ -117,23 +118,24 @@
 						$.mobile.changePage("home.html", { transition: "none", changeHash: false });
 					}
 					
-					$('#login-opt-professor').click(function(){ $('#div-opts').hide(); $('#div-professor').show(); $('#div-players').hide(); $('#div-torcidas').hide(); });
-					$('#login-opt-players').click(function(){ $('#div-opts').hide(); $('#div-professor').hide(); $('#div-players').show(); $('#div-torcidas').hide(); });
-					$('#login-opt-torcidas').click(function(){ $('#div-opts').hide(); $('#div-professor').hide(); $('#div-players').hide(); $('#div-torcidas').show(); });
-					$('.btvoltar-login').click(function(){ $('#div-opts').show(); $('#div-professor').hide(); $('#div-players').hide(); $('#div-torcidas').hide(); });
+					$('#login-opt-professor').click(function(){ $('#div-opts').hide(); $('#div-professor').show(); $('#div-players').hide(); $('#div-torcidas').hide(); $("#login_tipo").val("professor"); });
+					$('#login-opt-players').click(function(){ $('#div-opts').hide(); $('#div-professor').hide(); $('#div-players').show(); $('#div-torcidas').hide(); $("#login_tipo").val("players"); });
+					$('#login-opt-torcidas').click(function(){ $('#div-opts').hide(); $('#div-professor').hide(); $('#div-players').hide(); $('#div-torcidas').show(); $("#login_tipo").val("torcidas"); });
+					$('.btvoltar-login').click(function(){ $('#div-opts').show(); $('#div-professor').hide(); $('#div-players').hide(); $('#div-torcidas').hide(); $("#login_tipo").val(""); });
 					
 					
 				});
 
 				$("#bt_login_acessar").click(function(){
 
+					var tipo = $('#login_tipo').val();
 					var email = $('#login_email').val();
 					var senha = $('#login_senha').val();
 
 					if(email==""){ alert("O campo E-mail deve ser preenchido"); return false; }
 					if(senha==""){ alert("O campo Senha deve ser preenchido"); return false; }
 
-					$.get("https://playfc.com.br/app_api_v3/login.php", { email:email, senha:senha }, function(data){
+					$.get("https://playfc.com.br/app_api_v3/login.php", { tipo:tipo, email:email, senha:senha }, function(data){
 						if(data=="ERRO"){
 							alert("O E-mail ou a Senha utilizados não são válidos");
 						}else{
