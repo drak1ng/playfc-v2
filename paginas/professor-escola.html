@@ -73,7 +73,7 @@
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
 
-				$.get("https://playfc.com.br/app_api_v3/professor-escola.php", function(data){
+				$.get("https://playfc.com.br/app_api_v3/professor-escola.php", { id_usuarios:id_usuarios }, function(data){
 					$("#professor-escola-conteudo").html(data);
 				});
 
