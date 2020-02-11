@@ -54,7 +54,9 @@
 
 		    <div class="topo">
 			    <div class="logotipo" style="background:#14A7F8;">
+				    <div id='professor-inscricoes-old' style="float:left;"><i class="fas fa-list"></i></div>
 				    <div style="margin:0px 80px; text-align:center; color:#000; font-family:'roboto';" id="professor-inscricoes-titulo"><b>CADASTRO DA ESCOLA<b></div>
+				    <div id='professor-inscricoes-add' style="float:right;"><i class="fas fa-plus"></i></div>
 				</div>
 		    </div>
 
@@ -75,6 +77,14 @@
 
 				$.get("https://playfc.com.br/app_api_v3/professor-inscricoes.php", { id_usuarios:id_usuarios }, function(data){
 					$("#professor-inscricoes-conteudo").html(data);
+				});
+				
+				$('#professor-inscricoes-old').click(function(){
+					$.mobile.changePage("professor-campeonatos.html", { transition: "none", changeHash: false });
+				});
+				
+				$('#professor-inscricoes-add').click(function(){
+					$.mobile.changePage("professor-inscricoes-nova.html", { transition: "none", changeHash: false });
 				});
 
 			</script>
