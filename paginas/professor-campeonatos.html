@@ -54,6 +54,7 @@
 
 		    <div class="topo">
 			    <div class="logotipo" style="background:#14A7F8;">
+				    <div id='professor-campeonatos-voltar' style="float:left; color:#FFF; font-size:20px; text-align:center; padding:10px 10px 8px 10px; margin-top:45px;"><i class="fas fa-chevron-left"></i></div>
 				    <div style="margin:0px 80px; text-align:center; color:#000; font-family:'roboto';" id="professor-campeonatos-titulo"><b>CADASTRO DA ESCOLA<b></div>
 				</div>
 		    </div>
@@ -75,6 +76,10 @@
 
 				$.get("https://playfc.com.br/app_api_v3/professor-campeonatos.php", { id_usuarios:id_usuarios }, function(data){
 					$("#professor-campeonatos-conteudo").html(data);
+				});
+				
+				$('#professor-campeonatos-voltar').click(function(){
+					$.mobile.changePage("professor-inscricoes.html", { transition: "none", changeHash: false });
 				});
 
 			</script>
