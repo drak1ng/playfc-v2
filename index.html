@@ -65,6 +65,10 @@
 					<div class="menu-lateral-item" id="menu-professor-escola"><i class="fal fa-chalkboard-teacher"></i>Cadastro da Escola</div>
 					<div class="menu-lateral-item" id="menu-professor-inscricoes"><i class="fal fa-paste"></i>Inscrições</div>
 				</div>
+				<div class="menu-players">
+					<div class="menu-lateral-item" id="menu-players-inscricoes"><i class="fal fa-paste"></i>Inscrições</div>
+				</div>
+				
 				<div class="menu-lateral-item" id="menu-preferencias"><i class="fal fa-cogs"></i>Preferências</div>
 		    </div>
 		    <div style="background-color:rgba(0,0,0,0.8); position:fixed; top:0px; left:0px; width:calc(100% - 280px); height:100%; z-index:99999;" id="fechar_menu"></div>
@@ -92,6 +96,9 @@
 				$('#menu-professor-escola').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("professor-escola.html", { transition: "none", changeHash: false }); });
 				$('#menu-professor-inscricoes').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("professor-inscricoes.html", { transition: "none", changeHash: false }); });
 				$('#menu-professor-campeonatos').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("professor-campeonatos.html", { transition: "none", changeHash: false }); });
+				
+				$('#menu-players-inscricoes').click(function(){ $('#menu_lateral').hide(); $.mobile.changePage("players-inscricoes.html", { transition: "none", changeHash: false }); });
+				
 				
 				
 				document.addEventListener("deviceready", onDeviceReady, true);
