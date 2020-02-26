@@ -47,7 +47,7 @@
 				var foto_usuarios = window.localStorage.getItem('foto_usuarios');
 				$('#professor-inscricoes-imagem').css('background-image','url('+foto_usuarios+')');
 			    $('#professor-inscricoes-logo').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
-			    $('#professor-inscricoes-imagem').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+			    $('#professor-inscricoes-imagem').click(function(){ $.mobile.changePage("preferencias_foto.html", { transition: "fade", changeHash: false }); });
 				$('#professor-inscricoes-preferencias').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
 				$('#professor-inscricoes-menu').click(function(){ $('#menu_lateral').show(); });
 		    </script>

@@ -47,7 +47,7 @@
 				var foto_usuarios = window.localStorage.getItem('foto_usuarios');
 				$('#documentos-imagem').css('background-image','url('+foto_usuarios+')');
 			    $('#documentos-logo').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
-			    $('#documentos-imagem').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+			    $('#documentos-imagem').click(function(){ $.mobile.changePage("preferencias_foto.html", { transition: "fade", changeHash: false }); });
 				$('#documentos-preferencias').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
 				$('#documentos-menu').click(function(){ $('#menu_lateral').show(); });
 		    </script>
