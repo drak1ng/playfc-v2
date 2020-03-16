@@ -93,18 +93,15 @@
 <preference name="DisallowOverscroll" value="true" />
 
 <!--Geolocation-->
-<gap:plugin name="cordova-plugin-geolocation" source="npm"  spec="~2.4.2"  />
+<gap:plugin name="cordova-plugin-geolocation" source="npm"  spec="~2.4.2" />
 
 <!--Network Information-->
-<gap:plugin name="cordova-plugin-network-information" source="npm"  />
-<gap:plugin name="cordova-plugin-media" source="npm"  />
+<gap:plugin name="cordova-plugin-network-information" source="npm" />
 
-<gap:plugin name="cordova-plugin-inappbrowser" source="npm"  />
+<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
 
-<gap:plugin name="cordova-plugin-dialogs" source="npm"  />
+<gap:plugin name="cordova-plugin-dialogs" source="npm" />
 <gap:plugin name="cordova-plugin-device" source="npm" />
-
-<gap:plugin name="cordova-plugin-streaming-media" source="npm" />
 
 <gap:plugin name="cordova-plugin-camera" source="npm" />
 <gap:plugin name="cordova-plugin-ios-camera-permissions" source="npm" />
